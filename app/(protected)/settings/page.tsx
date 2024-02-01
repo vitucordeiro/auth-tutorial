@@ -1,5 +1,4 @@
-"use server"
-import { auth } from "@/auth"
+import { auth, signOut} from "@/auth"
 import { Session } from "next-auth"
 
 const SettingsPage = async() => {
@@ -8,6 +7,13 @@ const SettingsPage = async() => {
         <div>
             <p>data from user authenticate</p>
             {JSON.stringify(session)}
+            <form action={ async() => {
+                "use server";
+
+                await signOut();
+            }}>
+                <button>signOut</button>
+            </form>
         </div>
     )
 }
