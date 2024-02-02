@@ -13,14 +13,14 @@ export const {
 } = NextAuth({
   callbacks: {
 
-    async signIn({ user }){
+    // async signIn({ user }){
 
-      const existingUser = await getUserById(user.id)
-      if(!existingUser || !existingUser.emailVerified){
-        return false;
-      }
-      return true
-    },
+    //   const existingUser = await getUserById(user.id)
+    //   if(!existingUser || !existingUser.emailVerified){
+    //     return false;
+    //   }
+    //   return true
+    // },
   
     async session ({token, session}){
       console.log({
